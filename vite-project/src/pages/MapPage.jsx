@@ -24,8 +24,9 @@ const MapPage = () => {
       const mapInstance = new window.Tmapv2.Map(mapRef.current, {
         center: new window.Tmapv2.LatLng(37.5526836958422, 126.92500844858347),
         width: "100%",
-        height: "480px",
+        height: "850px",
         zoom: 18,
+        zoomControl:false,
         draggable: true,
       });
       
@@ -73,12 +74,12 @@ const MapPage = () => {
 
     return (
         <div>
-
             <div
-            
                 ref={mapRef}
-                className="relative w-full h-[480px]"    
-            >            <SearchBar/></div>
+                className="relative w-full h-[850px]"    
+            >            
+                <SearchBar/>
+            </div>
         </div>
     )
 }
