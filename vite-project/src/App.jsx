@@ -5,6 +5,7 @@ import { Layout } from './components/layout/Layout'
 import { Login } from './pages/Login'
 import { MyPage } from './pages/MyPage'
 import KakaoRedirectPage from './pages/KakaoRedirectPage'
+import MapPage from './pages/MapPage'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/auth/callback" element={<KakaoRedirectPage />} />
+          <Route path='/map' element={<MapPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
