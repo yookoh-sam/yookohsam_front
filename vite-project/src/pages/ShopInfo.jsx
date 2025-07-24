@@ -10,11 +10,13 @@ import img3 from "../assets/3.png";
 import img4 from "../assets/4.png";
 const images = [img1, img2, img3, img4];
 
+
 export const ShopInfo = () => {
   const navigate = useNavigate();
   const { storeId } = useParams();
   const [store, setStore] = useState(null);
   const [reviewData, setReviewData] = useState(null);
+
 
   useEffect(() => {
     const getStoreInfo = async () => {
