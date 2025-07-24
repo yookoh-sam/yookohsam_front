@@ -2,9 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import pinSmall from "../assets/pinsmall.svg";
 import pinBig from "../assets/pinbig.svg";
 import SearchBar from "../components/Searchbar";
+import { useNavigate } from "react-router-dom";
+import Modal from "../components/Modal";
 
 const MainPage = () => {
     const mapRef = useRef(null);
+    const nav = useNavigate();
     const [map, setMap] = useState(null);
     const [isTmapReady, setIsTmapReady] = useState(false);
     const [lng, setLng] = useState(0);
@@ -58,6 +61,8 @@ const MainPage = () => {
                 iconSize: new window.Tmapv2.Size(40,40),
             });
             markers.push(bigMarker);
+            const storeId = 1;
+            nav(`/store/${storeId}`)
         })
 
         markers.push(marker);
@@ -82,7 +87,7 @@ const MainPage = () => {
                 ref={mapRef}
                 className="relative w-full h-[850px]"    
             >            
-                <SearchBar/>
+                <SearchBar />
             </div>
         </div>
     )

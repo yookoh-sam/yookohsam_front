@@ -2,18 +2,11 @@ import axios from 'axios';
 import { useAuthStore } from '../stores/useAuthStore';
 
 export const axiosInstance = axios.create({
-  baseURL: 'https://api.example.com', // 백엔드 URL .env로
+  baseURL: import.meta.env.VITE_API_URL, // 백엔드 URL .env로
   headers: {
     'Content-Type': 'application/json',
   },
 });
-
-export const instance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  headers: {
-    "Content-Type": "application/json",
-  }
-})
 
 // 요청 인터셉터
 axiosInstance.interceptors.request.use(
