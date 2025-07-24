@@ -4,6 +4,12 @@ import { ProfileBar } from "../components/ProfileBar";
 import { useNavigate, useParams } from "react-router-dom";
 import { getStoreById, getReviewById } from "../apis/store";
 import ReviewCard from "../components/ReviewCard";
+import img1 from '../assets/1.png';
+import img2 from '../assets/2.png';
+import img3 from '../assets/3.png';
+import img4 from '../assets/4.png';
+const images = [img1, img2, img3, img4];
+
 
 export const ShopInfo = () => {
     const navigate = useNavigate();
@@ -64,9 +70,12 @@ export const ShopInfo = () => {
         <img src={shopImage} alt="store" className="w-1/2 rounded-md" />
       </div>
 
-      {/* 등록한 사람들 */}
-      <div className="mt-6 px-4">
-        <h3 className="font-semibold text-base mb-4">내 맛집으로 등록한 사람들</h3>
+        {/* 등록한 사람들 */}
+        <div className="mt-6 px-4">
+        <h3 className="font-semibold text-base mb-4">
+            내 맛집으로 등록한 사람들
+        </h3>
+
         <div className="overflow-y-auto max-h-[240px] pr-1 space-y-4">
         {/* 유저 카드 반복 */}
         {/* {[1, 2, 3, 4, 5].map((_, idx) => (
@@ -98,12 +107,33 @@ export const ShopInfo = () => {
         {reviewData &&  reviewData.reviews.map((review) => (
           <ReviewCard key={review.reviewId} reviews={review} />
         ))}
+        {/*
+            {images.map((imgSrc, idx) => (
+            <div key={idx} className="relative w-full">
+                <img
+                src={imgSrc}
+                alt={`유저 ${idx + 1}`}
+                className="w-full rounded-lg"
+                />
+
+                
+                <button
+                onClick={() => handleNavigateProfile(idx)}
+                className="absolute top-2 right-2 inline-flex h-[25px] px-[13px] py-[6px] items-center gap-[10px] rounded-[5px] bg-[#DBE9FF] text-[#0064FF] font-medium text-[11px] leading-none font-pretendard shadow-sm"
+                >
+                프로필 보기
+                </button>
+            </div>
+            ))}
+            */}
         </div>
-      </div>
+        </div>
+
+
 
       {/* 하단 픽 버튼 */}
       <div className="mt-8 px-4 mb-4">
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold cursor-pointer" >
+        <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold cursor-pointer" onClick={(()=>alert('기능 구현 예정입니다!'))} >
           내 맛집으로 픽하기
         </button>
       </div>
