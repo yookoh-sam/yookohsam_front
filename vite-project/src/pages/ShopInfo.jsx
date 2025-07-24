@@ -11,7 +11,7 @@ import img4 from '../assets/4.png';
 const images = [img1, img2, img3, img4];
 
 
-export const ShopInfo = () => {
+const ShopInfo = () => {
     const navigate = useNavigate();
     const {storeId} = useParams();
     const [store, setStore] = useState(null);
