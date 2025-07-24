@@ -14,8 +14,8 @@ export const Login = () => {
     return (
             <div className="flex items-center justify-center min-h-screen bg-gray-100">
                 <div className='flex flex-col items-center justify-center w-80 h-140 rounded-xl bg-[#FFFFFF] shadow gap-20'>
-                        <div className='font-semibold text-lg'>
-                            카카오톡으로 간편하게 로그인하고 서비스를 이용해보세요!
+                        <div className='font-semibold text-lg px-4'>
+                            카카오톡으로 간편하게 로그인하고<p/> 서비스를 이용해보세요!
                         </div>
 
                         <button 
