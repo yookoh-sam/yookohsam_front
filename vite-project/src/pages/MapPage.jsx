@@ -22,14 +22,25 @@ const MapPage = () => {
         width: "100%",
         height: "480px",
         zoom: 18,
-        // scrollwheel: false,
-        // zoomControl: false,
         draggable: true,
+      });
+      
+      mapInstance.addListener('click', function onClick(e) {
+        console.log("clicked", e);
+        const lat = e.latLng._lat;
+        const lng = e.latLng._lng;
+        console.log(lat, lng);
+
+        new window.Tmapv2.Marker({
+            position: new window.Tmapv2.LatLng(lat, lng),
+            map: mapInstance,
+        });
       });
       setMap(mapInstance);
 
     }
   }, [isTmapReady]);
+
 
     return (
         <div>
