@@ -8,6 +8,13 @@ export const axiosInstance = axios.create({
   },
 });
 
+export const instance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+  headers: {
+    "Content-Type": "application/json",
+  }
+})
+
 // 요청 인터셉터
 axiosInstance.interceptors.request.use(
   (config) => {

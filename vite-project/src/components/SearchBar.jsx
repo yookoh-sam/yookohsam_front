@@ -4,7 +4,7 @@ const SearchBar = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="flex items-center w-full max-w-md h-12 px-4 rounded-full border border-gray-300 bg-white shadow-sm">
+    <div className="flex items-center absolute top-4 left-1/2 -translate-x-1/2 w-[90%] h-12 px-4 rounded-lg bg-white z-10">
       {/* 검색 아이콘 */}
 
       {/* 입력창 */}

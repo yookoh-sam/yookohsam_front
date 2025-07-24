@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { MainPage } from './pages/MainPage'
+import MainPage from './pages/MainPage'
 import { Layout } from './components/layout/Layout'
 import { Login } from './pages/Login'
 import { MyPage } from './pages/MyPage'
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<MainPage/>} />
+          <Route index element={<MainPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/auth/callback" element={<KakaoRedirectPage />} />
