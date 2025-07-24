@@ -2,6 +2,11 @@ import React from "react";
 import shopImage from "../assets/image_pizza.png"
 import { ProfileBar } from "../components/ProfileBar";
 import { useNavigate } from "react-router-dom";
+import img1 from '../assets/1.png';
+import img2 from '../assets/2.png';
+import img3 from '../assets/3.png';
+import img4 from '../assets/4.png';
+const images = [img1, img2, img3, img4];
 
 export const ShopInfo = () => {
     const navigate = useNavigate();
@@ -33,43 +38,38 @@ export const ShopInfo = () => {
         <img src={shopImage} alt="store" className="w-1/2 rounded-md" />
       </div>
 
-      {/* 등록한 사람들 */}
-      <div className="mt-6 px-4">
-        <h3 className="font-semibold text-base mb-4">내 맛집으로 등록한 사람들</h3>
+        {/* 등록한 사람들 */}
+        <div className="mt-6 px-4">
+        <h3 className="font-semibold text-base mb-4">
+            내 맛집으로 등록한 사람들
+        </h3>
+
         <div className="overflow-y-auto max-h-[240px] pr-1 space-y-4">
-        {/* 유저 카드 반복 */}
-        {[1, 2, 3, 4, 5].map((_, idx) => (
-          <div
-            key={idx}
-            className="flex justify-between items-start mb-4 border-b pb-4"
-          >
-            <div className="px-2 mt-3 flex gap-3">
-              {/* 프로필 + 뱃지 */}
-              <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gray-300" />
-                <div className="absolute -top-2 -left-2 bg-pink-400 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  {idx + 1}
-                </div>
-              </div>
-              <div>
-                <div className="text-sm font-bold">user <span className="text-gray-500 text-xs">성산동 주민</span></div>
-                <div className="text-xs text-gray-400">21시간 전</div>
-                <div className="mt-1 text-sm">가게 리뷰 내<br />응....................................<span className="text-blue-500">더보기</span></div>
-              </div>
+            {images.map((imgSrc, idx) => (
+            <div key={idx} className="relative w-full">
+                <img
+                src={imgSrc}
+                alt={`유저 ${idx + 1}`}
+                className="w-full rounded-lg"
+                />
+
+                {/* 프로필 보기 버튼 */}
+                <button
+                onClick={() => handleNavigateProfile(idx)}
+                className="absolute top-2 right-2 inline-flex h-[25px] px-[13px] py-[6px] items-center gap-[10px] rounded-[5px] bg-[#DBE9FF] text-[#0064FF] font-medium text-[11px] leading-none font-pretendard shadow-sm"
+                >
+                프로필 보기
+                </button>
             </div>
-            <button className="inline-flex h-[25px] px-[13px] py-[6px] items-start gap-[10px] rounded-[5px] bg-[#DBE9FF] text-[#0064FF] font-medium text-[11px] leading-none font-pretendard"
-            onClick={handleNavigateProfile}>
-              프로필 보기
-            </button>
-            
-          </div>
-        ))}
+            ))}
         </div>
-      </div>
+        </div>
+
+
 
       {/* 하단 픽 버튼 */}
       <div className="mt-8 px-4 mb-4">
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold cursor-pointer" >
+        <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold cursor-pointer" onClick={(()=>alert('기능 구현 예정입니다!'))} >
           내 맛집으로 픽하기
         </button>
       </div>

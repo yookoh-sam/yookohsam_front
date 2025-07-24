@@ -22,7 +22,8 @@ function App() {
           <Route path="/auth/callback" element={<KakaoRedirectPage />} />
           <Route path='/map' element={<MapPage />} />
           <Route path='/shopInfo' element={<ShopInfo/>}/>
-          <Route path='profile' element={<Profile />}/>
+          <Route path='/mypage' element={<MyPage />}/>
+          <Route path='/profile' element={<Profile/>}/>
           <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
         </Route>
       </Routes>
