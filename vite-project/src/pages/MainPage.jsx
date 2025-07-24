@@ -3,7 +3,6 @@ import pinSmall from "../assets/pinsmall.svg";
 import pinBig from "../assets/pinbig.svg";
 import SearchBar from "../components/Searchbar";
 import { useNavigate } from "react-router-dom";
-import Modal from "../components/Modal";
 
 const MainPage = () => {
     const mapRef = useRef(null);
@@ -27,7 +26,7 @@ const MainPage = () => {
     useEffect(() => {
     if (isTmapReady && mapRef.current) {
       const mapInstance = new window.Tmapv2.Map(mapRef.current, {
-        center: new window.Tmapv2.LatLng(37.5526836958422, 126.92500844858347),
+        center: new window.Tmapv2.LatLng(37.53724636276723, 126.99981896664625),
         width: "100%",
         height: "850px",
         zoom: 18,
