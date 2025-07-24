@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import SearchBar from "../components/Searchbar";
 
 const MapPage = () => {
     const mapRef = useRef(null);
@@ -44,10 +45,12 @@ const MapPage = () => {
 
     return (
         <div>
+
             <div
+            
                 ref={mapRef}
-                className="w-full h-[480px]"    
-            ></div>
+                className="relative w-full h-[480px]"    
+            >            <SearchBar/></div>
         </div>
     )
 }

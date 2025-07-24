@@ -6,6 +6,8 @@ import { Login } from './pages/Login'
 import { MyPage } from './pages/MyPage'
 import KakaoRedirectPage from './pages/KakaoRedirectPage'
 import MapPage from './pages/MapPage'
+import OAuth2RedirectHandler from './pages/OAuth2RedirectHandler'
+import { ShopInfo } from './pages/ShopInfo'
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/auth/callback" element={<KakaoRedirectPage />} />
           <Route path='/map' element={<MapPage />} />
+          <Route path='/shopInfo' element={<ShopInfo/>}/>
+          <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
         </Route>
       </Routes>
     </BrowserRouter>
